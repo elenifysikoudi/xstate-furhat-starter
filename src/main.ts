@@ -38,9 +38,6 @@ async function fhAttend() {
   return fetch(`http://${FURHATURI}/furhat/attend?user=RANDOM`), {
     method: "POST",
     headers: myHeaders,
-    body: JSON.stringify ({
-      enum : "RANDOM",
-    })
   };
 }
 
@@ -174,7 +171,7 @@ const dmMachine = setup({
   fhSound : fromPromise<any, null> (async () => {
     return fromPromise.call([
       fhGesture('Shake'),
-      fhSound("https://cvws.icloud-content.com/B/AUbG2FJvYs-9g6DbOWqY5viZ42KCAXBP6_xWKCKYcisiQJXlUuPTD6ZR/110853-Male_mouth_makes_tch_tch_tch_sound_effect-Nightingale_Music_Productions-12655.wav?o=Aqd3OCCNmgCH7uwsn840ToJ3Xu-l3s9uSkSp4p8W2AzO&v=1&x=3&a=CAogAZqtkW8uaqPQlNIUx2MZw-sEhs7Em7mLY-Bjc3CBPvwSbxDErcewpzIYxIqjsqcyIgEAUgSZ42KCWgTTD6ZRaieFrf4KIAchWfoNvEwwZrGoNUdE0v9xwQwj-lyfPM_G0wg03E6jR1ZyJ1fwqVIIJJH4d3V72BGIB6yWR8_Cy4CCmOOo8Z5pGDuP6a8zqxag1Q&e=1728561333&fl=&r=00cac991-f392-4db8-a910-0867450ea24c-1&k=ppPiCKo3vSx0jrhdZNqC2Q&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=62&s=j3P5HczWhXQSF6IuSei_SHFWICE&cd=i"),
+      fhSound("https://furhat-audio.s3.eu-north-1.amazonaws.com/110853-Male_mouth_makes_tch_tch_tch_sound_effect-Nightingale_Music_Productions-12655.wav"),
       fhAttend()
     ])
   })
