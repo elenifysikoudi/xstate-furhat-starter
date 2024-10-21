@@ -35,10 +35,10 @@ async function fhGetUser() {
 async function fhAttend() {
   const myHeaders = new Headers();
   myHeaders.append("accept", "application/json");
-  return fetch(`http://${FURHATURI}/furhat/attend?user=RANDOM`), {
+  return fetch(`http://${FURHATURI}/furhat/attend?user=RANDOM`, {
     method: "POST",
     headers: myHeaders,
-  };
+  });
 }
 
 async function ListeningCarefully() {
@@ -145,7 +145,7 @@ const dmMachine = setup({
       return fhSay("Hi");
     }),
     Attend : fromPromise<any, null>(async () => {
-      return fhGetUser; 
+      return fhGetUser(); 
     }) ,
     fhL: fromPromise<any, null>(async () => {
      return Promise.all([
